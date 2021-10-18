@@ -1,10 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Confirm from './components/Confirm';
 
 function App() {
   return (
     <div className="App">
+      <Confirm />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
