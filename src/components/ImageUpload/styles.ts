@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-import { Wrapper as Button } from '../Button/styles';
-
 export const Wrapper = styled.div``;
 
 export const ImagePreview = styled.div<{ preview: string }>`
   height: 100%;
 
-  background: url(${props =>  props.preview});
+  background: url(${props => props.preview});
   background-position: center;
   background-size: cover;
 
@@ -20,7 +18,7 @@ export const ImagePreviewWrapper = styled.div`
   background-color: #274060;
   height: 240px;
 
-  ${Button} {
+  button {
     display: none;
   }
 
@@ -29,7 +27,7 @@ export const ImagePreviewWrapper = styled.div`
       opacity: 0.7;
     }
 
-    ${Button} {
+    button {
       display: flex;
     }
   }
@@ -50,4 +48,25 @@ export const Label = styled.label`
   display: flex;
   align-items: center;
   gap: 12px;
+`;
+
+export const RemoveButton = styled.button`
+  height: 56px;
+  padding: 16px;
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  color: #274060;
+  background: #FFFFFF;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  span {
+    font-size: 18px;
+  }
 `;

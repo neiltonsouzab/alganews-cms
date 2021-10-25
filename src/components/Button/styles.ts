@@ -46,11 +46,6 @@ export const Wrapper = styled.button<{
   color: ${props => THEME[props.variant].color};
   background-color: ${props => THEME[props.variant].bg};
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-
   &:hover, &:focus {
     ${props => THEME[props.variant].onHover}
   }

@@ -1,7 +1,6 @@
-import { mdiDelete, mdiTrashCan, mdiTrashCanOutline, mdiUpload } from '@mdi/js';
+import { mdiDelete, mdiUpload } from '@mdi/js';
 import Icon from '@mdi/react';
 import { ChangeEvent, useState } from 'react';
-import Button from '../Button';
 
 import * as Styled from './styles';
 
@@ -31,12 +30,10 @@ export default function ImageUpload({ label }: ImageUploadProps) {
     return (
       <Styled.ImagePreviewWrapper>
         <Styled.ImagePreview preview={filePreview}>
-          <Button 
-            variant="text"
-            label="Remover imagem"
-            onClick={() => setFilePreview(null)}
-            icon={mdiDelete}
-          />
+          <Styled.RemoveButton>
+            <span>Remover imagem</span>
+            <Icon path={mdiDelete} size="24px" color="#274060" />
+          </Styled.RemoveButton>
         </Styled.ImagePreview>
       </Styled.ImagePreviewWrapper>
     )
@@ -45,18 +42,18 @@ export default function ImageUpload({ label }: ImageUploadProps) {
   return (
     <Styled.Wrapper>
       <Styled.Label>
-        <Icon 
+        <Icon
           size={'24px'}
           path={mdiUpload}
         />
 
         {label}
 
-        <Styled.Input 
+        <Styled.Input
           type="file"
           onChange={handleChange}
         />
       </Styled.Label>
     </Styled.Wrapper>
-  ) 
+  )
 }
