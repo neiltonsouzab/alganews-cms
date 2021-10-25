@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { transparentize } from 'polished';
 
-
-
 const THEME = {
   danger: {
     bg: '#F84735',
@@ -47,6 +45,11 @@ export const Wrapper = styled.button<{
   border: 1px solid ${props => THEME[props.variant].bg};
   color: ${props => THEME[props.variant].color};
   background-color: ${props => THEME[props.variant].bg};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
 
   &:hover, &:focus {
     ${props => THEME[props.variant].onHover}

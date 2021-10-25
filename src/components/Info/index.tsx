@@ -1,6 +1,5 @@
 import Icon from '@mdi/react';
 import { mdiInformation } from '@mdi/js';
-import styled from 'styled-components';
 
 import * as Styled from './styles';
 
