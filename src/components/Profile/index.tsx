@@ -8,7 +8,7 @@ interface ProfileProps {
 export default function Profile({ name, description }: ProfileProps) {
   return (
     <Styled.Wrapper>
-      <Styled.Avatar src='https://github.com/neiltonsouzab.png' />
+      <Styled.Avatar src='https://github.com/neiltonsouzab.png' alt={name} />
 
       <Styled.Content>
         <Styled.Name>{name}</Styled.Name>
