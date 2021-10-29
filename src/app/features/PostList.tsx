@@ -1,14 +1,9 @@
-import { useMemo } from 'react';
-import { Column, useTable } from 'react-table';
-import { ComponentMeta } from '@storybook/react';
-import Icon from '@mdi/react';
-import { mdiOpenInNew } from '@mdi/js';
+import { useMemo } from "react";
+import { mdiOpenInNew } from "@mdi/js";
+import { Column, useTable } from "react-table";
+import Icon from "@mdi/react";
 
-import Table from '../app/components/Table';
-export default {
-  title: 'Example/Table',
-  component: Table,
-} as ComponentMeta<typeof Table>;
+import Table from "../components/Table";
 
 type Post = {
   id: number
@@ -24,7 +19,7 @@ type Post = {
   }
 }
 
-export function Default() {
+export default function PostList() {
   const data = useMemo<Post[]>(
     () => [
       {
@@ -127,70 +122,9 @@ export function Default() {
 
   const instance = useTable<Post>({ data, columns });
 
-  return <Table<Post> instance={instance} />
-}
-
-export function WithoutData() {
-  const data = useMemo<Post[]>(
-    () => [],
-    []
-  );
-
-  const columns = useMemo<Column<Post>[]>(
-    () => [
-      {
-        Header: '',
-        accessor: 'id',
-        Cell: () => <Icon path={mdiOpenInNew} size="14px" color="#09F" />
-      },
-      {
-        Header: 'Artigo',
-        accessor: 'title',
-        width: 320,
-        Cell: (props) => (
-          <div style={{ textAlign: 'left', display: 'flex', alignItems: 'center', gap: 8 }}>
-            <img
-              src={props.row.original.author.avatar}
-              alt={props.row.original.author.name}
-              width={24}
-              height={24}
-            />
-            {props.value}
-          </div>
-        ),
-      },
-      {
-        Header: 'Views',
-        accessor: 'views',
-        Cell: (props) => (
-          <div style={{ textAlign: 'right', fontWeight: 700, fontFamily: '"Roboto Mono", monospace' }}>
-            {props.value.toLocaleString('pt-BR')
-            }</div>
-        ),
-      },
-      {
-        Header: 'Conversões',
-        accessor: 'conversions',
-        Cell: (props) => (
-          <div style={{ textAlign: 'right', display: 'flex', gap: 8, fontWeight: 700, fontFamily: '"Roboto Mono", monospace' }}>
-            <span>{props.value.thousands}k</span>
-            <span style={{ color: '#09F' }}>{props.value.percentage}%</span>
-          </div>
-        ),
-      },
-      {
-        Header: 'Ações',
-        Cell: () => (
-          <div style={{ textAlign: 'right' }}>
-            todo: actions
-          </div>
-        ),
-      },
-    ],
-    []
-  );
-
-  const instance = useTable<Post>({ data, columns });
-
-  return <Table<Post> instance={instance} />
+  return (
+    <Table
+      instance={instance}
+    />
+  )
 }

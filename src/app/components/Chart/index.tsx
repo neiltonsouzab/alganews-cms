@@ -49,7 +49,7 @@ const options: ChartJS.ChartOptions = {
 export default function Chart({ data, title }: ChartProps) {
   return (
     <Styled.Wrapper>
-      <div>
+      <div style={{ marginBottom: 16, }}>
         <Heading level={3}>
           {title}
         </Heading>
@@ -60,7 +60,7 @@ export default function Chart({ data, title }: ChartProps) {
           height={139}
           width={600}
           data={data}
-          options={options} 
+          options={options}
         />
       ) : <NoData height={139} />}
     </Styled.Wrapper>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Confirm from '../components/Confirm';
+import Confirm from '../app/components/Confirm';
 export default {
   title: 'Example/Confirm',
   component: Confirm,

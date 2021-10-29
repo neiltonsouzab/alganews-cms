@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+import reportWebVitals from './reportWebVitals';
+import './core/imports.css';
+import GlobalStyles from './core/globalStyles';
+import Home from './app/views/Home.view';
+import Contacts from './app/views/Contacts.view';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -13,10 +16,17 @@ ReactDOM.render(
         <Route
           path="/home"
           exact
-          component={App}
+          component={Home}
+        />
+
+
+        <Route
+          path="/contacts"
+          component={Contacts}
         />
       </Switch>
     </BrowserRouter>
+    <GlobalStyles />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Paragraph from '../components/Typograph/Paragraph';
+import Paragraph from '../app/components/Typograph/Paragraph';
 
 export default {
   title: 'Typograph/Paragraph',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import ErrorDisplay from '../components/ErrorDisplay';
+import ErrorDisplay from '../app/components/ErrorDisplay';
 export default {
   title: 'Example/ErrorDisplay',
   component: ErrorDisplay,

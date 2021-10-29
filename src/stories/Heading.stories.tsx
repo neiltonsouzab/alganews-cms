@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Heading from '../components/Typograph/Heading';
+import Heading from '../app/components/Typograph/Heading';
 
 export default {
   title: 'Typograph/Heading',

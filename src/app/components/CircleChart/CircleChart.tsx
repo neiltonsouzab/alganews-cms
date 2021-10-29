@@ -11,7 +11,7 @@ interface CircleChartProps {
 }
 
 export default function CircleChart({ theme, strokeWidth, size, progress, caption }: CircleChartProps) {
-  const getThemeColor = () => 
+  const getThemeColor = () =>
     theme === 'primary' ? '#09F' : '#274060';
 
   const THEME = getThemeColor();
@@ -40,7 +40,7 @@ export default function CircleChart({ theme, strokeWidth, size, progress, captio
             r={RADIUS}
           />
 
-          <Styled.Circle 
+          <Styled.Circle
             fill="none"
             cy={CENTER}
             cx={CENTER}
@@ -57,7 +57,7 @@ export default function CircleChart({ theme, strokeWidth, size, progress, captio
         </Styled.Percentage>
       </Styled.SvgWrapper>
 
-      { caption && <Styled.Caption>{caption}</Styled.Caption>}
+      {caption && <Styled.Caption>{caption}</Styled.Caption>}
     </Styled.Wrapper>
   )
-} 
+}
